@@ -15,19 +15,26 @@ public class Personaje {
     private int ataque;
     private int defensa;
     private double ta;
+    private String tipoA;
     
     public Personaje()
     {
         String nombre = "Computadora";
-        int salud =200;
-        int ataque=30;
-        int defensa=20;
-        double ta=0.5;
+        salud =200;
+        ataque=30;
+        defensa=20;
+        ta=0.5;
+        tipoA = "golpe con disco duro";
     }
     
-    public Personaje(String _nombre)
+    public Personaje(String _nombre, int _salud, int _ataque, int _defensa, double _ta, String _tipo)
     {
       this.nombre = _nombre;  
+      salud = _salud;
+      ataque=_ataque;
+      defensa=_defensa;
+      ta=_ta;
+      tipoA = _tipo;
     }
     
     public String getNombre()
@@ -80,15 +87,20 @@ public class Personaje {
         this.ta = _ta;
     }
     
-    public void Atacado(int _ataque)
+    public String getTipoA()
+    {
+        return this.tipoA;
+    }
+    
+    public void Atacado(int _ataque, String _tipo)
     {
         int danho = _ataque-this.defensa;
         int vidaRestante=this.salud;
         if(danho>0){
             vidaRestante-=danho;
-            System.out.println(this.nombre+" ha recibido un golpe... Ha perdido "+danho+" puntos de vida");
+            System.out.println(this.nombre+" ha recibido un "+_tipo+"... Ha perdido "+danho+" puntos de vida");
         }else{
-            System.out.println(this.nombre+" recibio un golpe muy debil... Levantate y ataca");
+            System.out.println(this.nombre+" recibio un "+_tipo+" muy debil... Levantate y ataca");
         }
         this.salud = vidaRestante;
         System.out.println(this.nombre+" tiene "+this.salud+" puntos de vida restante");
