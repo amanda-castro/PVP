@@ -33,5 +33,18 @@ public class Caballero extends Personaje{
         }
     }
     
+    public void bajarDefensa()
+    {
+        Random r = new Random();
+        int a = r.nextInt(200);
+        if(a>100 && this.getSalud()>100)
+        {
+            int defensa = this.getDefensa();
+            defensa-=3;
+            this.setDefensa(defensa);
+            System.out.println("Desgraciado!! Me habeis dañado la armadura");
+            System.out.println("Pagarais por ello");
+        }
+    }
     
 }
