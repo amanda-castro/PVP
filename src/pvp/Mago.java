@@ -27,8 +27,13 @@ public class Mago extends Personaje{
             int salud = this.getSalud();
             salud += 8;
             super.setSalud(salud);
-            System.out.println("Cur interpretaris");
-            System.out.println("Mi hechizo ha funcionado... Estoy mas fuerte");
+            System.out.println("Mago: Cur interpretaris");
+            System.out.println("Mago: Mi hechizo ha funcionado... Estoy mas fuerte");
         }
+    }
+
+    @Override
+    public void ganador() {
+        System.out.println("Mago: Mi hechizos fueron los mas fuertes, asi que te venci");
     }
 }

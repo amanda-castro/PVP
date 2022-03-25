@@ -9,7 +9,7 @@ package pvp;
  *
  * @author amand
  */
-public class Personaje {
+public abstract class Personaje {
     private String nombre ;
     private int salud ;
     private int ataque;
@@ -102,6 +102,7 @@ public class Personaje {
         }else{
             System.out.println(this.nombre+" recibio un "+_tipo+" muy debil... Levantate y ataca");
         }
+        if(vidaRestante<0) vidaRestante =0;
         this.salud = vidaRestante;
         System.out.println(this.nombre+" tiene "+this.salud+" puntos de vida restante");
     }
@@ -119,4 +120,7 @@ public class Personaje {
         if(this.salud<=0) vida=false;
         return vida;
     }
+    
+    // Metodo abstracto que se ejecuta al ganar el juego
+    public abstract void ganador();
 }

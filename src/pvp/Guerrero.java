@@ -29,7 +29,12 @@ public class Guerrero extends Personaje {
             double ta = this.getTa();
             ta-=0.02;
             this.setTa(ta);
-            System.out.println("Mis habilidades han mejorado... Ya no me podras golpear facilmente");
+            System.out.println("Guerrero: Mis habilidades han mejorado... Ya no me podras golpear facilmente");
         }
+    }
+
+    @Override
+    public void ganador() {
+        System.out.println("Guerrero: Ha ganado el mas certero");
     }
 }

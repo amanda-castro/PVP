@@ -42,9 +42,14 @@ public class Caballero extends Personaje{
             int defensa = this.getDefensa();
             defensa-=3;
             this.setDefensa(defensa);
-            System.out.println("Desgraciado!! Me habeis dañado la armadura");
-            System.out.println("Pagarais por ello");
+            System.out.println("Caballero: Desgraciado!! Me habeis dañado la armadura");
+            System.out.println("Caballero: Pagarais por ello");
         }
+    }
+
+    @Override
+    public void ganador() {
+        System.out.println("Caballero: Al subestimarme perdiste");
     }
     
 }
