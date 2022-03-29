@@ -5,6 +5,7 @@
  */
 package pvp;
 
+import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -20,7 +21,7 @@ public class PVP {
     public static void main(String[] args) {
         // TODO code application logic here
         //Personajes del juego
-        Computadora computadora = new Computadora();
+        Personaje computadora = new Computadora();
         Caballero caballero = new Caballero();
         Mago mago = new Mago();
         Guerrero guerrero = new Guerrero();
@@ -122,7 +123,7 @@ public class PVP {
                     else caballero.Esquivar();
                     caballero.aumentoAtaque();
                     caballero.bajarDefensa();
-                    computadora.aumentarDefensa();
+                    ((Computadora)computadora).aumentarDefensa();
                 }
                 if(caballero.Estado()) caballero.ganador();
                 else computadora.ganador();
@@ -182,7 +183,7 @@ public class PVP {
                     if(pelea(computadora.getTa())) guerrero.Atacado(computadora.getAtaque(), computadora.getTipoA());
                     else guerrero.Esquivar();
                     guerrero.aumentoDefensa();
-                    computadora.aumentarDefensa();
+                    ((Computadora)computadora).aumentarDefensa();
                 }
                 if(guerrero.Estado()) guerrero.ganador();
                 else computadora.ganador();
@@ -234,7 +235,7 @@ public class PVP {
                     if(pelea(computadora.getTa())) mago.Atacado(computadora.getAtaque(), computadora.getTipoA());
                     else mago.Esquivar();
                     mago.aumentarSalud();
-                    computadora.aumentarDefensa();
+                    ((Computadora)computadora).aumentarDefensa();
                 }
                 if(mago.Estado()) mago.ganador();
                 else computadora.ganador();
